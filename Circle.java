@@ -11,7 +11,7 @@ class Circle extends Ellipse {
     }
 
     public String toString() {
-	return "Circle " + op.name() + " rad:" + aRad;
+	return "Circle " + op.name() + " x:" + x + " y:" + y + " rad:" + aRad;
     }
 
 }

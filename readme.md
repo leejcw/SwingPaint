@@ -1,15 +1,16 @@
-Interative 2D Constructive Solid Geometry (CSG) Demo
-====================================================
+SwingPaint
+==========
+An Interative 2D Constructive Solid Geometry (CSG) Demo
+-------------------------------------------------------
+![CSG Bear](/images/csg-bear.png)
 
-Operators
----------
+### Operators
 `a` : AND (cyan)
 `o` : OR (green)
 `n` : NOT (red)
 `x` : XOR (yellow)
 
-Shapes
-------
+### Shapes
 `r` : rectangle
 `s` : square
 `q` : quadrilateral
@@ -17,8 +18,8 @@ Shapes
 `c` : circle
 `t` : triangle
 
-Controls
---------
+### Controls
 `del` : remove selected
 `tab` : cycle selected
 arrow keys: expand/shrink shape
+space : cycle corners

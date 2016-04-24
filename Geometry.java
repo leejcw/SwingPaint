@@ -33,7 +33,7 @@ abstract class Geometry {
     }
 
     abstract boolean isHit(int x, int y);
-
     abstract void draw(Graphics g);
+    abstract void corner(Graphics g, int corner);
     
 }

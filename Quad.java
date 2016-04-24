@@ -10,9 +10,9 @@ class Quad extends Geometry {
 
     Quad(Op op) {
 	super(op);
-	centerX = centerY = 0;
-	leftX = 0; leftY = 10;
-	rightX = 20; rightY = 0;
+	centerX = centerY = 10;
+	leftX = 15; leftY = 20;
+	rightX = 30; rightY = 10;
     }
 							
     // rectangle inscribed by these points
@@ -27,7 +27,11 @@ class Quad extends Geometry {
     }
     
     boolean isHit(int x, int y) {
-	return false;
+	int otherX = rightX + leftX - centerX;
+	int otherY = rightY + leftY - centerY;
+	Triangle t1 = new Triangle(op, leftX, leftY, centerX, centerY, rightX, rightY);
+	Triangle t2 = new Triangle(op, leftX, leftY, otherX, otherY, rightX, rightY);
+	return t1.isHit(x, y) || t2.isHit(x, y);
     }
 
     public String toString() {
@@ -35,7 +39,30 @@ class Quad extends Geometry {
     }
 
     void draw(Graphics g) {
-	System.out.println("Quad draw todo");
+	g.setColor(color);
+	g.drawLine(centerX, centerY, leftX, leftY);
+	g.drawLine(centerX, centerY, rightX, rightY);
+	int otherX = rightX + leftX - centerX;
+	int otherY = rightY + leftY - centerY;
+	g.drawLine(leftX, leftY, otherX, otherY);
+	g.drawLine(rightX, rightY, otherX, otherY);
+    }
+
+    void corner(Graphics g, int corner) {
+	g.setColor(Color.WHITE);
+	switch (corner) {
+	case 1:
+	    g.fillRect(centerX - 1, centerY - 1, 2, 2);
+	    break;
+	case 2:
+	    g.fillRect(leftX - 1, leftY - 1, 2, 2);
+	    break;
+	case 3:
+	    g.fillRect(rightX - 1, rightY - 1, 2, 2);
+	    break;
+	default:
+	    break;
+	}
     }
 
 }

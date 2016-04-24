@@ -76,6 +76,9 @@ public class SwingPaint extends JFrame implements KeyListener, ActionListener {
 	case 9: // TAB
 	    mainPanel.next();
 	    break;
+	case 32: // space
+	    mainPanel.corner();
+	    break;
         case KeyEvent.VK_UP:
             mainPanel.up();
             break;

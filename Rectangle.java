@@ -33,8 +33,9 @@ class Rectangle extends Geometry {
     void draw(Graphics g) {
 	g.setColor(color);
 	g.drawRect(x, y, w, h);
-	//	Graphics2D g2 = (Graphics2D) g;
-	//g2.draw(new Rectangle2D.Double(x, y, w, h));
+    }
+
+    void corner(Graphics g, int c) {
     }
 
 }

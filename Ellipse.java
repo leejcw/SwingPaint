@@ -29,16 +29,19 @@ class Ellipse extends Geometry {
     }
 
     boolean isHit(int x, int y) {
-	return false;
+	return Math.pow(x - this.x, 2) / (aRad * aRad) + Math.pow(y - this.y, 2) / (bRad * bRad) <= 1;
     }
 
     public String toString() {
-	return "Ellipse " + op.name() + " a:" + aRad + " b:" + bRad;
+	return "Ellipse " + op.name() + " x:" + x + " y:" + y + " a:" + aRad + " b:" + bRad;
     }
 
     void draw(Graphics g) {
 	g.setColor(color);
 	Graphics2D g2 = (Graphics2D) g;
-	g2.draw(new Ellipse2D.Double(x, y, 2 * aRad, 2 * bRad));
+	g2.draw(new Ellipse2D.Double(x - aRad, y - bRad, aRad * 2, bRad * 2));
+    }
+
+    void corner(Graphics g, int c) {
     }
 }
