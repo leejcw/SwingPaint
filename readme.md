@@ -2,7 +2,7 @@ SwingPaint
 ==========
 An Interative 2D Constructive Solid Geometry (CSG) Demo
 -------------------------------------------------------
-![CSG Bear](/images/csg-bear.png =400x)
+<img src="https://github.com/leejcw/SwingPaint/blob/master/images/csg-bear.png" width="512" height="560" />
 
 ### Operators
 `a` : AND (cyan)
